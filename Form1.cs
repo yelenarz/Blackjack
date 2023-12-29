@@ -87,7 +87,7 @@ namespace Blackjack
         {
             results.checkResults(game);
             if ()
-                                bet *= 2;
+                bet *= 2;
             game.Player.Money += bet;
             DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -99,7 +99,7 @@ namespace Blackjack
                 this.Close();
             }
         }
-        
+
         private void enterBetTextbox_TextChanged_1(object sender, EventArgs e)
         {
             startGameBtn.Enabled = true;
@@ -173,6 +173,6 @@ namespace Blackjack
             }
         }
 
-       
+
     }
 }
