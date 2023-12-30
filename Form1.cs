@@ -12,7 +12,6 @@ namespace Blackjack
     public partial class Form1 : Form
     {
         private Game game;
-        private CheckResults results;
 
         int bet;
         int playerCardsCount, dealerCardsCount;
@@ -20,7 +19,6 @@ namespace Blackjack
         public Form1()
         {
             game = new Game();
-            results = new CheckResults();
             InitializeComponent();
         }
 
@@ -52,7 +50,6 @@ namespace Blackjack
                 label4.Visible = false;
                 enterBetTextbox.Visible = false;
                 betLabel.Text = "Your bet: " + bet.ToString();
-                game.Player.Money -= bet;
                 walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
                 splitBtn.Visible = false;
                 doubleDownBtn.Visible = false;
@@ -89,8 +86,9 @@ namespace Blackjack
 
         public void gameOver()
         {
-            results.checkResults(game);
-            if (results.draw)
+            CheckResults res = new CheckResults();
+            res.checkResults(game);
+            if (res.draw)
             {
                 game.Player.Money -= bet;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw " + (bet).ToString(), MessageBoxButtons.YesNo);
@@ -103,7 +101,7 @@ namespace Blackjack
                     this.Close();
                 }
             }
-            else if (results.bustDealer)
+            else if (res.bustDealer)
             {
                 bet *= 2;
                 game.Player.Money += bet;
@@ -117,7 +115,7 @@ namespace Blackjack
                     this.Close();
                 }
             }
-            else if (results.bustPlayer)
+            else if (res.bustPlayer)
             {
                 game.Player.Money -= bet;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
@@ -203,8 +201,6 @@ namespace Blackjack
                 default:
                     break;
             }
-        }
-
-
+        } 
     }
 }
