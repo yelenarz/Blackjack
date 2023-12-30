@@ -28,13 +28,13 @@ namespace Blackjack
             game = new Game();
             InitializeComponent();
             dealerDeckController = new PlayerDeckController(
-                dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7
+                dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7, dealerCard8
             );
             playerDeckControllerMain = new PlayerDeckController(
-                playerCard1, playerCard2, playerCard3, playerCard4, playerCard5, playerCard6, playerCard7
+                playerCard1, playerCard2, playerCard3, playerCard4, playerCard5, playerCard6, playerCard7, playerCard8
             );
             playerDeckControllerAdditional = new PlayerDeckController(
-                player2Card1, player2Card2, player2Card3, player2Card4, player2Card5, player2Card6, player2Card7
+                player2Card1, player2Card2, player2Card3, player2Card4, player2Card5, player2Card6, player2Card7, player2Card8
             );
         }
 
@@ -46,17 +46,17 @@ namespace Blackjack
             newGameBox.Visible = false;
             bet = int.Parse(enterBetTextbox.Text);
 
-            if (game.Player.Money < 300 && (bet < 2 || bet > 100))
-            {
-                label4.Text = "First bet needs to be >=2 or <=100";
-            }
-            else if (game.Player.Money == 300 && (bet < 2 || bet > 50))
+            if (game.Player.Money == 300 && (bet < 2 || bet > 50))
             {
                 label4.Text = "First bet needs to be >=2 or <=50";
             }
+            else if ((bet < 2 || bet > 100) && (game.Player.Money < 300 || game.Player.Money > 300))
+            {
+                label4.Text = "Bet needs to be >=2 or <=100";
+            }
             else
             {
-                game.Dealer.Cards.Clear();//does not remove cards
+                game.Dealer.Cards.Clear();
                 game.Player.Cards.Clear();
                 dealerCardsCount = 1;
                 playerDeckControllerMain.Clear();
@@ -66,6 +66,7 @@ namespace Blackjack
                 label4.Visible = false;
                 enterBetTextbox.Visible = false;
                 game.Player.Money -= bet;
+                betLabel.Visible = true;
                 betLabel.Text = "Your bet: " + bet.ToString();
                 walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
                 splitBtn.Visible = false;
@@ -120,20 +121,29 @@ namespace Blackjack
             res.checkResults(game);
             if (res.draw)
             {
-                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw. You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (game.Player.Money <= 1)
                 {
-                    setNewGame();
+                    label4.Text = "You do not have enough money";
+                    this.Close();
                 }
                 else
                 {
-                    this.Close();
+                    DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw. You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        setNewGame();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                    return true;
                 }
-                return true;
             }
             else if (res.blackJack)
             {
                 game.Player.Money += (int)(bet * 2.5);
+                walletLabel.Text = "Your wallet " + game.Player.Money;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -148,6 +158,7 @@ namespace Blackjack
             else if (res.bustDealer)
             {
                 game.Player.Money += bet * 2;
+                walletLabel.Text = "Your wallet " + game.Player.Money;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet * 2).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -161,16 +172,31 @@ namespace Blackjack
             }
             else if (res.bustPlayer)
             {
-                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (game.Player.Money <= 1)
                 {
-                    setNewGame();
+                    DialogResult result = MessageBox.Show("\nYou lost and do not have money to play " + MessageBoxButtons.OK);
+                    if (result== DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    this.Close();
+                    DialogResult result = MessageBox.Show("\nWould you like to play again? ", "You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        setNewGame();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                    return true;
                 }
-                return true;
             }
             return false;
         }

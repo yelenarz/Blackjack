@@ -15,10 +15,11 @@ namespace Blackjack
         PictureBox card5;
         PictureBox card6;
         PictureBox card7;
+        PictureBox card8;
 
         public int count;
 
-        public PlayerDeckController(PictureBox card1, PictureBox card2, PictureBox card3, PictureBox card4, PictureBox card5, PictureBox card6, PictureBox card7)
+        public PlayerDeckController(PictureBox card1, PictureBox card2, PictureBox card3, PictureBox card4, PictureBox card5, PictureBox card6, PictureBox card7, PictureBox card8)
         {
             this.card1 = card1;
             this.card2 = card2;
@@ -27,6 +28,7 @@ namespace Blackjack
             this.card5 = card5;
             this.card6 = card6;
             this.card7 = card7;
+            this.card8 = card8;            
             this.count = 0;
         }
 
@@ -39,6 +41,7 @@ namespace Blackjack
             card5.Image = null;
             card6.Image = null;
             card7.Image = null;
+            card8.Image = null;
         }
 
         public void ShowCard(Card card)
@@ -73,6 +76,8 @@ namespace Blackjack
                     return card6;
                 case 6:
                     return card7;
+                case 7:
+                    return card8;
                 default:
                     throw new Exception("no space");
             }

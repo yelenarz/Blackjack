@@ -72,6 +72,9 @@
             dealerCard7 = new PictureBox();
             label4 = new Label();
             enterBetTextbox = new TextBox();
+            dealerCard8 = new PictureBox();
+            playerCard8 = new PictureBox();
+            player2Card8 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dealerCard1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerCard1).BeginInit();
@@ -95,6 +98,9 @@
             ((System.ComponentModel.ISupportInitialize)playerCard6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerCard5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dealerCard8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card8).BeginInit();
             SuspendLayout();
             // 
             // playerCountLabel
@@ -139,7 +145,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { gameToolStripMenuItem, infoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(998, 28);
+            menuStrip1.Size = new Size(1096, 28);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -252,7 +258,7 @@
             // takeCardBtn
             // 
             takeCardBtn.ForeColor = SystemColors.ActiveCaptionText;
-            takeCardBtn.Location = new Point(669, 208);
+            takeCardBtn.Location = new Point(807, 208);
             takeCardBtn.Name = "takeCardBtn";
             takeCardBtn.Size = new Size(94, 29);
             takeCardBtn.TabIndex = 23;
@@ -263,7 +269,7 @@
             // stayBtn
             // 
             stayBtn.ForeColor = SystemColors.ActiveCaptionText;
-            stayBtn.Location = new Point(669, 265);
+            stayBtn.Location = new Point(807, 265);
             stayBtn.Name = "stayBtn";
             stayBtn.Size = new Size(94, 29);
             stayBtn.TabIndex = 24;
@@ -274,7 +280,7 @@
             // splitBtn
             // 
             splitBtn.ForeColor = SystemColors.ActiveCaptionText;
-            splitBtn.Location = new Point(791, 233);
+            splitBtn.Location = new Point(929, 233);
             splitBtn.Name = "splitBtn";
             splitBtn.Size = new Size(94, 29);
             splitBtn.TabIndex = 25;
@@ -286,7 +292,7 @@
             // doubleDownBtn
             // 
             doubleDownBtn.ForeColor = SystemColors.ActiveCaptionText;
-            doubleDownBtn.Location = new Point(669, 323);
+            doubleDownBtn.Location = new Point(807, 323);
             doubleDownBtn.Name = "doubleDownBtn";
             doubleDownBtn.Size = new Size(148, 29);
             doubleDownBtn.TabIndex = 26;
@@ -462,6 +468,9 @@
             // newGameBox
             // 
             newGameBox.BackColor = Color.Transparent;
+            newGameBox.Controls.Add(player2Card8);
+            newGameBox.Controls.Add(playerCard8);
+            newGameBox.Controls.Add(dealerCard8);
             newGameBox.Controls.Add(doubleDownBtn);
             newGameBox.Controls.Add(takeCardBtn);
             newGameBox.Controls.Add(splitBtn);
@@ -497,7 +506,7 @@
             newGameBox.Controls.Add(dealerCard2);
             newGameBox.Location = new Point(28, 173);
             newGameBox.Name = "newGameBox";
-            newGameBox.Size = new Size(920, 460);
+            newGameBox.Size = new Size(1056, 460);
             newGameBox.TabIndex = 51;
             newGameBox.TabStop = false;
             newGameBox.Visible = false;
@@ -555,7 +564,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Bookman Old Style", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(315, 86);
+            label4.Location = new Point(261, 86);
             label4.Name = "label4";
             label4.Size = new Size(256, 20);
             label4.TabIndex = 76;
@@ -569,12 +578,39 @@
             enterBetTextbox.TabIndex = 77;
             enterBetTextbox.TextChanged += enterBetTextbox_TextChanged_1;
             // 
+            // dealerCard8
+            // 
+            dealerCard8.Location = new Point(652, 39);
+            dealerCard8.Name = "dealerCard8";
+            dealerCard8.Size = new Size(60, 86);
+            dealerCard8.SizeMode = PictureBoxSizeMode.StretchImage;
+            dealerCard8.TabIndex = 81;
+            dealerCard8.TabStop = false;
+            // 
+            // playerCard8
+            // 
+            playerCard8.Location = new Point(652, 208);
+            playerCard8.Name = "playerCard8";
+            playerCard8.Size = new Size(60, 86);
+            playerCard8.SizeMode = PictureBoxSizeMode.StretchImage;
+            playerCard8.TabIndex = 82;
+            playerCard8.TabStop = false;
+            // 
+            // player2Card8
+            // 
+            player2Card8.Location = new Point(652, 323);
+            player2Card8.Name = "player2Card8";
+            player2Card8.Size = new Size(60, 86);
+            player2Card8.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card8.TabIndex = 83;
+            player2Card8.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkOliveGreen;
-            ClientSize = new Size(998, 678);
+            ClientSize = new Size(1096, 678);
             Controls.Add(enterBetTextbox);
             Controls.Add(label4);
             Controls.Add(newGameBox);
@@ -611,6 +647,9 @@
             ((System.ComponentModel.ISupportInitialize)playerCard6).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerCard5).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dealerCard8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -661,5 +700,8 @@
         private PictureBox playerCard5;
         private PictureBox dealerCard7;
         private Label playerCountLabel2;
+        private PictureBox player2Card8;
+        private PictureBox playerCard8;
+        private PictureBox dealerCard8;
     }
 }
