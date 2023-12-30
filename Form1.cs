@@ -220,11 +220,6 @@ namespace Blackjack
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void stayBtn_Click(object sender, EventArgs e)
         {
             this.dealerPlay();
@@ -261,6 +256,22 @@ namespace Blackjack
             {
                 this.dealerPlay();
             }
+        }
+
+        private void startANewGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setNewGame();
+            getCards(playerCard1, playerCard2, dealerCard1);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This game was designed by Yelena Razzhivina");
         }
     }
 }
