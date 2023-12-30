@@ -43,14 +43,21 @@ namespace Blackjack
 
         public void ShowCard(Card card)
         {
-            PictureBox picture = this.GetNextPictureBox();
+            PictureBox picture = this.GetNextPictureBox(count);
             picture.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(card.GetNameOfView());
             count++;
         }
 
-        private PictureBox GetNextPictureBox()
+        internal void ClearLastCard()
         {
-            switch (count)
+            PictureBox picture = this.GetNextPictureBox(count-1);
+            picture.Image = null;
+            count--;
+        }
+
+        private PictureBox GetNextPictureBox(int currentCount)
+        {
+            switch (currentCount)
             {
                 case 0:
                     return card1;

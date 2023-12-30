@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Diagnostics.SymbolStore;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
@@ -73,16 +74,18 @@ namespace Blackjack
         {
             Random random = new Random();
 
-            Card card1 = game.DeckSet.GetNextCard(random);
-            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
+            //Card card1 = game.DeckSet.GetNextCard(random);
+            Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
             game.Player.AddCard(card1);
-            Card card2 = game.DeckSet.GetNextCard(random);
-            //Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Jack));
+            //Card card2 = game.DeckSet.GetNextCard(random);
+            Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Ace));
             game.Player.AddCard(card2);
 
             playerDeckControllerMain.ShowCard(card1);
             playerDeckControllerMain.ShowCard(card2);
             playerCountLabel.Text = "Your count: " + game.Player.GetSumValue().ToString();
+            playerCountLabel2.Text = "Your count: " + game.Player2.GetSumValue().ToString();
+
 
             if (card1.Rank.IsSamePictureValue(card2.Rank))//checks only values 10 and king true
             {
@@ -172,7 +175,9 @@ namespace Blackjack
 
         private void splitBtn_Click(object sender, EventArgs e)
         {
+            splitBtn.Visible = false;
             betLabel.Visible = false;
+            playerCountLabel2.Visible = true;
             game.Player.Money -= bet;
             bet *= 2;
             walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
@@ -180,7 +185,17 @@ namespace Blackjack
             hand2Bet1.Visible = true;
             hand1Bet1.Text = "Bet: " + (bet / 2).ToString();
             hand2Bet1.Text = "Bet: " + (bet / 2).ToString();
-            getCards(player2Card1, player2Card2, dealerCard2);
+
+            Card last = game.Player.Cards[game.Player.Cards.Count - 1];
+            game.Player.RemoveCard(last);
+            game.Player2.AddCard(last);
+
+            playerDeckControllerMain.ClearLastCard();
+            playerDeckControllerAdditional.ShowCard(last);
+
+            playerCountLabel.Text = "Your count: " + game.Player.GetSumValue().ToString();
+            playerCountLabel2.Text = "Your count: " + game.Player2.GetSumValue().ToString();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

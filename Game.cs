@@ -13,12 +13,15 @@ namespace Blackjack
         public DeckSet DeckSet { get; private set; }
 
         public Player Player { get; private set; }
+
+        public Player Player2 { get; private set; }
         public Dealer Dealer { get; private set; }
 
         public Game()
         {
             DeckSet = new DeckSet(6);
             Player = new Player(300);
+            Player2 = new Player(0);
             Dealer = new Dealer();
         }
     }

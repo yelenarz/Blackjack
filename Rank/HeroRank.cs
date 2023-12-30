@@ -10,13 +10,23 @@ namespace Blackjack.Rank
     {
         public EHero Hero { get; private set; }
 
+        private bool maxMode;
+        public bool MaxMode { 
+            get { return maxMode; } 
+            set { maxMode = value; refreshValue(); }
+        }
         public HeroRank(EHero hero)
         {
             Hero = hero;
+            this.refreshValue();            
+        }
 
-            switch(hero){
+        private void refreshValue()
+        {
+            switch (this.Hero)
+            {
                 case EHero.Ace:
-                    Value = 1;
+                    Value = MaxMode ? 11 : 1;
                     break;
 
                 case EHero.King:
@@ -26,7 +36,7 @@ namespace Blackjack.Rank
                     break;
 
                 default:
-                    throw new Exception(string.Format("unsupported EHero type = {0}", hero));
+                    throw new Exception(string.Format("unsupported EHero type = {0}", this.Hero));
             }
         }
 
