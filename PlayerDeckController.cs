@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
-    //thi
+    /*
+     * In this class functions add cards in the new pictureBox for player and dealer
+     * and delete them at the end of the game
+     */
     public class PlayerDeckController
     {
+        //Maximum 8 cards can be filled in the pictureboxes
         PictureBox card1;
         PictureBox card2;
         PictureBox card3;
@@ -18,7 +22,7 @@ namespace Blackjack
         PictureBox card7;
         PictureBox card8;
 
-        public int count;
+        public int count; //counts how many pictureboxes are filled already
 
         public PlayerDeckController(PictureBox card1, PictureBox card2, PictureBox card3, PictureBox card4, PictureBox card5, PictureBox card6, PictureBox card7, PictureBox card8)
         {
@@ -45,6 +49,7 @@ namespace Blackjack
             card8.Image = null;
         }
 
+        //Shows card in the next picture box
         public void ShowCard(Card card)
         {
             PictureBox picture = this.GetNextPictureBox(count);
@@ -52,6 +57,11 @@ namespace Blackjack
             count++;
         }
 
+        /*
+         * This section is responsible for the split functionality. 
+         * It involves removing the last card from the first hand and transferring 
+         * it to another hand. Visually, it will appear as one card positioned under another. 
+         */
         internal void ClearLastCard()
         {
             PictureBox picture = this.GetNextPictureBox(count-1);

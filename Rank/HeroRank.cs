@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Rank
 {
+    //This class holds values for heroes(ace, jack, king, queen), refreshValue() here assigns them
     public class HeroRank: BaseRank
     {
         public EHero Hero { get; private set; }
@@ -26,7 +27,7 @@ namespace Blackjack.Rank
             switch (this.Hero)
             {
                 case EHero.Ace:
-                    Value = MaxMode ? 11 : 1;
+                    Value = MaxMode ? 11 : 1;//Check if ace is to be calculated as 11 or 1
                     break;
 
                 case EHero.King:
@@ -40,6 +41,7 @@ namespace Blackjack.Rank
             }
         }
 
+        //check if the rank of first two cards match
         public override bool IsSamePictureValue(BaseRank b)
         {
             HeroRank anotherHero = b as HeroRank;

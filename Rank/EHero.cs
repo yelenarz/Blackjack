@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Rank
 {
+    //Declare the heroes for the cards(nonnumeric)
     public enum EHero
     {
         Ace = 1,

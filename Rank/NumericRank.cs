@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack.Rank
 {
+    //In this class, functions assign values to numeric ranked cards(2-10) and check for split if the same
     public class NumericRank: BaseRank
     {
         public NumericRank(int value) {
@@ -14,6 +15,7 @@ namespace Blackjack.Rank
             Value = value;
         }
 
+        //Check if numeric ranked cards have the same rank
         public override bool IsSamePictureValue(BaseRank b)
         {
             NumericRank anotherNumeric = b as NumericRank;
