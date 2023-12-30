@@ -1,3 +1,4 @@
+using Blackjack.Rank;
 using System;
 using System.Configuration;
 using System.Diagnostics.SymbolStore;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Blackjack
 {
@@ -16,10 +18,23 @@ namespace Blackjack
         int bet;
         int playerCardsCount, dealerCardsCount;
 
+        PlayerDeckController dealerDeckController;
+        PlayerDeckController playerDeckControllerMain;
+        PlayerDeckController playerDeckControllerAdditional;
+
         public Form1()
         {
             game = new Game();
             InitializeComponent();
+            dealerDeckController = new PlayerDeckController(
+                dealerCard1, dealerCard2, dealerCard3, dealerCard4, dealerCard5, dealerCard6, dealerCard7
+            );
+            playerDeckControllerMain = new PlayerDeckController(
+                playerCard1, playerCard2, playerCard3, playerCard4, playerCard5, playerCard6, playerCard7
+            );
+            playerDeckControllerAdditional = new PlayerDeckController(
+                player2Card1, player2Card2, player2Card3, player2Card4, player2Card5, player2Card6, player2Card7
+            );
         }
 
         public void setNewGame()
@@ -39,16 +54,13 @@ namespace Blackjack
                 game.Dealer.Cards.Clear();//does not remove cards
                 game.Player.Cards.Clear();
                 dealerCardsCount = 1;
-                dealerCard2.Image = null;
-                dealerCard3.Image = null;
-                dealerCard4.Image = null;
-                dealerCard5.Image = null;
-                dealerCard6.Image = null;
-                playerCard3.Image = null;
-                playerCard4.Image = null;
+                playerDeckControllerMain.Clear();
+                playerDeckControllerAdditional.Clear();
+                dealerDeckController.Clear();
                 newGameBox.Visible = true;
                 label4.Visible = false;
                 enterBetTextbox.Visible = false;
+                game.Player.Money -= bet;
                 betLabel.Text = "Your bet: " + bet.ToString();
                 walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
                 splitBtn.Visible = false;
@@ -62,15 +74,17 @@ namespace Blackjack
             Random random = new Random();
 
             Card card1 = game.DeckSet.GetNextCard(random);
+            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
             game.Player.AddCard(card1);
             Card card2 = game.DeckSet.GetNextCard(random);
+            //Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Jack));
             game.Player.AddCard(card2);
 
-            Card1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(card1.GetNameOfView());
-            Card2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(card2.GetNameOfView());
+            playerDeckControllerMain.ShowCard(card1);
+            playerDeckControllerMain.ShowCard(card2);
             playerCountLabel.Text = "Your count: " + game.Player.GetSumValue().ToString();
 
-            if (card1.Rank.Value == card2.Rank.Value)//checks only values 10 and king true
+            if (card1.Rank.IsSamePictureValue(card2.Rank))//checks only values 10 and king true
             {
                 splitBtn.Visible = true;
             }
@@ -78,19 +92,18 @@ namespace Blackjack
             Card dCard = game.DeckSet.GetNextCard(random);
             game.Dealer.AddCard(dCard);
 
-            DCard.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
+            dealerDeckController.ShowCard(dCard);
             dealerCountLabel.Text = "Dealer's count: " + game.Dealer.GetSumValue().ToString();
 
-            gameOver();
+            isGameOver();
         }
 
-        public void gameOver()
+        public bool isGameOver()
         {
             CheckResults res = new CheckResults();
             res.checkResults(game);
             if (res.draw)
             {
-                game.Player.Money -= bet;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -100,11 +113,11 @@ namespace Blackjack
                 {
                     this.Close();
                 }
+                return true;
             }
             else if (res.bustDealer)
             {
-                bet *= 2;
-                game.Player.Money += bet;
+                game.Player.Money += bet * 2;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -114,10 +127,10 @@ namespace Blackjack
                 {
                     this.Close();
                 }
+                return true;
             }
             else if (res.bustPlayer)
             {
-                game.Player.Money -= bet;
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -127,7 +140,9 @@ namespace Blackjack
                 {
                     this.Close();
                 }
+                return true;
             }
+            return false;
         }
 
         private void enterBetTextbox_TextChanged_1(object sender, EventArgs e)
@@ -143,7 +158,16 @@ namespace Blackjack
 
         private void takeCardBtn_Click(object sender, EventArgs e)
         {
-            getCards(playerCard3, playerCard4, dealerCard2);
+            Random random = new Random();
+
+            Card card1 = game.DeckSet.GetNextCard(random);
+            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
+            game.Player.AddCard(card1);
+
+            playerDeckControllerMain.ShowCard(card1);
+            playerCountLabel.Text = "Your count: " + game.Player.GetSumValue().ToString();
+
+            isGameOver();
         }
 
         private void splitBtn_Click(object sender, EventArgs e)
@@ -156,7 +180,7 @@ namespace Blackjack
             hand2Bet1.Visible = true;
             hand1Bet1.Text = "Bet: " + (bet / 2).ToString();
             hand2Bet1.Text = "Bet: " + (bet / 2).ToString();
-            getCards(pictureBox4, pictureBox5, dealerCard2);
+            getCards(player2Card1, player2Card2, dealerCard2);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -166,41 +190,17 @@ namespace Blackjack
 
         private void stayBtn_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Card dCard = game.DeckSet.GetNextCard(random);
-            game.Dealer.AddCard(dCard);
-            dealerCountLabel.Text = "Dealer's count: " + game.Dealer.GetSumValue().ToString();
-
-            switch (dealerCardsCount)
+            bool isGameOverVar = false;
+            while (!isGameOverVar)
             {
-                case 1:
-                    dealerCard2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
-                    dealerCardsCount++;
-                    gameOver();
-                    break;
-                case 2:
-                    dealerCard3.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
-                    dealerCardsCount++;
-                    gameOver();
-                    break;
-                case 3:
-                    dealerCard4.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
-                    dealerCardsCount++;
-                    gameOver();
-                    break;
-                case 4:
-                    dealerCard5.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
-                    dealerCardsCount++;
-                    gameOver();
-                    break;
-                case 5:
-                    dealerCard6.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
-                    dealerCardsCount++;
-                    gameOver();
-                    break;
-                default:
-                    break;
+                Random random = new Random();
+                Card dCard = game.DeckSet.GetNextCard(random);
+                game.Dealer.AddCard(dCard);
+                dealerDeckController.ShowCard(dCard);
+                dealerCountLabel.Text = "Dealer's count: " + game.Dealer.GetSumValue().ToString();
+                isGameOverVar = isGameOver();
             }
-        } 
+
+        }
     }
 }

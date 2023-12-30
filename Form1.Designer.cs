@@ -48,91 +48,55 @@
             stayBtn = new Button();
             splitBtn = new Button();
             doubleDownBtn = new Button();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
+            player2Card1 = new PictureBox();
+            player2Card2 = new PictureBox();
+            player2Card3 = new PictureBox();
+            player2Card4 = new PictureBox();
+            player2Card5 = new PictureBox();
             dealerCard2 = new PictureBox();
             dealerCard3 = new PictureBox();
             dealerCard4 = new PictureBox();
             dealerCard5 = new PictureBox();
             dealerCard6 = new PictureBox();
-            pictureBox15 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            player2Card6 = new PictureBox();
+            player2Card7 = new PictureBox();
             playerCard3 = new PictureBox();
             playerCard4 = new PictureBox();
             betLabel = new Label();
             hand1Bet1 = new Label();
             hand2Bet1 = new Label();
-            hand1Bet2 = new Label();
-            hand2Bet2 = new Label();
             newGameBox = new GroupBox();
             choiceGroupBox = new GroupBox();
-            label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            pictureBox20 = new PictureBox();
-            pictureBox21 = new PictureBox();
-            pictureBox22 = new PictureBox();
-            pictureBox23 = new PictureBox();
-            pictureBox24 = new PictureBox();
-            pictureBox25 = new PictureBox();
-            pictureBox26 = new PictureBox();
-            pictureBox27 = new PictureBox();
-            pictureBox19 = new PictureBox();
-            pictureBox18 = new PictureBox();
-            pictureBox17 = new PictureBox();
-            pictureBox16 = new PictureBox();
-            pictureBox14 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox3 = new PictureBox();
             label4 = new Label();
             enterBetTextbox = new TextBox();
+            dealerCard7 = new PictureBox();
+            playerCard5 = new PictureBox();
+            playerCard6 = new PictureBox();
+            playerCard7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dealerCard1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerCard1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerCard2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerCard3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerCard4).BeginInit();
             newGameBox.SuspendLayout();
             choiceGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox21).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox22).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox23).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox24).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox25).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox26).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox27).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dealerCard7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard7).BeginInit();
             SuspendLayout();
             // 
             // playerCountLabel
@@ -211,7 +175,7 @@
             // 
             // playerCard1
             // 
-            playerCard1.Location = new Point(249, 224);
+            playerCard1.Location = new Point(206, 224);
             playerCard1.Name = "playerCard1";
             playerCard1.Size = new Size(41, 67);
             playerCard1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -268,7 +232,7 @@
             // 
             // playerCard2
             // 
-            playerCard2.Location = new Point(402, 224);
+            playerCard2.Location = new Point(273, 224);
             playerCard2.Name = "playerCard2";
             playerCard2.Size = new Size(41, 67);
             playerCard2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -316,50 +280,50 @@
             doubleDownBtn.UseVisualStyleBackColor = true;
             doubleDownBtn.Visible = false;
             // 
-            // pictureBox4
+            // player2Card1
             // 
-            pictureBox4.Location = new Point(155, 315);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(41, 67);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 30;
-            pictureBox4.TabStop = false;
+            player2Card1.Location = new Point(206, 320);
+            player2Card1.Name = "player2Card1";
+            player2Card1.Size = new Size(41, 67);
+            player2Card1.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card1.TabIndex = 30;
+            player2Card1.TabStop = false;
             // 
-            // pictureBox5
+            // player2Card2
             // 
-            pictureBox5.Location = new Point(249, 317);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(41, 67);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 31;
-            pictureBox5.TabStop = false;
+            player2Card2.Location = new Point(273, 320);
+            player2Card2.Name = "player2Card2";
+            player2Card2.Size = new Size(41, 67);
+            player2Card2.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card2.TabIndex = 31;
+            player2Card2.TabStop = false;
             // 
-            // pictureBox6
+            // player2Card3
             // 
-            pictureBox6.Location = new Point(355, 315);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(41, 67);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 32;
-            pictureBox6.TabStop = false;
+            player2Card3.Location = new Point(339, 320);
+            player2Card3.Name = "player2Card3";
+            player2Card3.Size = new Size(41, 67);
+            player2Card3.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card3.TabIndex = 32;
+            player2Card3.TabStop = false;
             // 
-            // pictureBox7
+            // player2Card4
             // 
-            pictureBox7.Location = new Point(437, 315);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(41, 67);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 33;
-            pictureBox7.TabStop = false;
+            player2Card4.Location = new Point(410, 320);
+            player2Card4.Name = "player2Card4";
+            player2Card4.Size = new Size(41, 67);
+            player2Card4.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card4.TabIndex = 33;
+            player2Card4.TabStop = false;
             // 
-            // pictureBox8
+            // player2Card5
             // 
-            pictureBox8.Location = new Point(564, 315);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(41, 67);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 34;
-            pictureBox8.TabStop = false;
+            player2Card5.Location = new Point(473, 320);
+            player2Card5.Name = "player2Card5";
+            player2Card5.Size = new Size(41, 67);
+            player2Card5.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card5.TabIndex = 34;
+            player2Card5.TabStop = false;
             // 
             // dealerCard2
             // 
@@ -406,36 +370,27 @@
             dealerCard6.TabIndex = 39;
             dealerCard6.TabStop = false;
             // 
-            // pictureBox15
+            // player2Card6
             // 
-            pictureBox15.Location = new Point(636, 315);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(41, 67);
-            pictureBox15.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox15.TabIndex = 41;
-            pictureBox15.TabStop = false;
+            player2Card6.Location = new Point(545, 315);
+            player2Card6.Name = "player2Card6";
+            player2Card6.Size = new Size(41, 67);
+            player2Card6.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card6.TabIndex = 41;
+            player2Card6.TabStop = false;
             // 
-            // pictureBox1
+            // player2Card7
             // 
-            pictureBox1.Location = new Point(762, 315);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 67);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 42;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(830, 315);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 67);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 43;
-            pictureBox2.TabStop = false;
+            player2Card7.Location = new Point(622, 315);
+            player2Card7.Name = "player2Card7";
+            player2Card7.Size = new Size(41, 67);
+            player2Card7.SizeMode = PictureBoxSizeMode.StretchImage;
+            player2Card7.TabIndex = 42;
+            player2Card7.TabStop = false;
             // 
             // playerCard3
             // 
-            playerCard3.Location = new Point(564, 224);
+            playerCard3.Location = new Point(339, 224);
             playerCard3.Name = "playerCard3";
             playerCard3.Size = new Size(41, 67);
             playerCard3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -444,7 +399,7 @@
             // 
             // playerCard4
             // 
-            playerCard4.Location = new Point(762, 218);
+            playerCard4.Location = new Point(410, 224);
             playerCard4.Name = "playerCard4";
             playerCard4.Size = new Size(41, 67);
             playerCard4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -466,7 +421,7 @@
             // hand1Bet1
             // 
             hand1Bet1.AutoSize = true;
-            hand1Bet1.Location = new Point(198, 300);
+            hand1Bet1.Location = new Point(183, 297);
             hand1Bet1.Name = "hand1Bet1";
             hand1Bet1.Size = new Size(34, 20);
             hand1Bet1.TabIndex = 47;
@@ -476,64 +431,22 @@
             // hand2Bet1
             // 
             hand2Bet1.AutoSize = true;
-            hand2Bet1.Location = new Point(402, 294);
+            hand2Bet1.Location = new Point(183, 390);
             hand2Bet1.Name = "hand2Bet1";
             hand2Bet1.Size = new Size(34, 20);
             hand2Bet1.TabIndex = 48;
             hand2Bet1.Text = "Bet:";
             hand2Bet1.Visible = false;
             // 
-            // hand1Bet2
-            // 
-            hand1Bet2.AutoSize = true;
-            hand1Bet2.Location = new Point(596, 294);
-            hand1Bet2.Name = "hand1Bet2";
-            hand1Bet2.Size = new Size(34, 20);
-            hand1Bet2.TabIndex = 49;
-            hand1Bet2.Text = "Bet:";
-            hand1Bet2.Visible = false;
-            // 
-            // hand2Bet2
-            // 
-            hand2Bet2.AutoSize = true;
-            hand2Bet2.Location = new Point(793, 294);
-            hand2Bet2.Name = "hand2Bet2";
-            hand2Bet2.Size = new Size(34, 20);
-            hand2Bet2.TabIndex = 50;
-            hand2Bet2.Text = "Bet:";
-            hand2Bet2.Visible = false;
-            // 
             // newGameBox
             // 
+            newGameBox.Controls.Add(playerCard7);
+            newGameBox.Controls.Add(playerCard6);
+            newGameBox.Controls.Add(playerCard5);
+            newGameBox.Controls.Add(dealerCard7);
             newGameBox.Controls.Add(choiceGroupBox);
-            newGameBox.Controls.Add(label12);
-            newGameBox.Controls.Add(label11);
-            newGameBox.Controls.Add(label10);
-            newGameBox.Controls.Add(label9);
-            newGameBox.Controls.Add(label8);
-            newGameBox.Controls.Add(label7);
-            newGameBox.Controls.Add(label6);
-            newGameBox.Controls.Add(label5);
-            newGameBox.Controls.Add(pictureBox20);
-            newGameBox.Controls.Add(pictureBox21);
-            newGameBox.Controls.Add(pictureBox22);
-            newGameBox.Controls.Add(pictureBox23);
-            newGameBox.Controls.Add(pictureBox24);
-            newGameBox.Controls.Add(pictureBox25);
-            newGameBox.Controls.Add(pictureBox26);
-            newGameBox.Controls.Add(pictureBox27);
-            newGameBox.Controls.Add(pictureBox19);
-            newGameBox.Controls.Add(pictureBox18);
-            newGameBox.Controls.Add(pictureBox17);
-            newGameBox.Controls.Add(pictureBox16);
-            newGameBox.Controls.Add(pictureBox14);
-            newGameBox.Controls.Add(pictureBox10);
-            newGameBox.Controls.Add(pictureBox9);
-            newGameBox.Controls.Add(pictureBox3);
-            newGameBox.Controls.Add(hand2Bet2);
             newGameBox.Controls.Add(playerCard3);
             newGameBox.Controls.Add(dealerCard1);
-            newGameBox.Controls.Add(hand1Bet2);
             newGameBox.Controls.Add(playerCard1);
             newGameBox.Controls.Add(dealerCountLabel);
             newGameBox.Controls.Add(hand2Bet1);
@@ -542,25 +455,24 @@
             newGameBox.Controls.Add(hand1Bet1);
             newGameBox.Controls.Add(playerCard4);
             newGameBox.Controls.Add(label1);
-            newGameBox.Controls.Add(pictureBox2);
             newGameBox.Controls.Add(label2);
-            newGameBox.Controls.Add(pictureBox1);
+            newGameBox.Controls.Add(player2Card7);
             newGameBox.Controls.Add(walletLabel);
             newGameBox.Controls.Add(playerCard2);
-            newGameBox.Controls.Add(pictureBox15);
+            newGameBox.Controls.Add(player2Card6);
             newGameBox.Controls.Add(dealerCard6);
-            newGameBox.Controls.Add(pictureBox4);
-            newGameBox.Controls.Add(pictureBox6);
-            newGameBox.Controls.Add(pictureBox8);
+            newGameBox.Controls.Add(player2Card1);
+            newGameBox.Controls.Add(player2Card3);
+            newGameBox.Controls.Add(player2Card5);
             newGameBox.Controls.Add(dealerCard5);
-            newGameBox.Controls.Add(pictureBox7);
-            newGameBox.Controls.Add(pictureBox5);
+            newGameBox.Controls.Add(player2Card4);
+            newGameBox.Controls.Add(player2Card2);
             newGameBox.Controls.Add(dealerCard4);
             newGameBox.Controls.Add(dealerCard3);
             newGameBox.Controls.Add(dealerCard2);
             newGameBox.Location = new Point(27, 153);
             newGameBox.Name = "newGameBox";
-            newGameBox.Size = new Size(935, 522);
+            newGameBox.Size = new Size(894, 415);
             newGameBox.TabIndex = 51;
             newGameBox.TabStop = false;
             newGameBox.Visible = false;
@@ -578,230 +490,6 @@
             choiceGroupBox.TabIndex = 75;
             choiceGroupBox.TabStop = false;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(837, 390);
-            label12.Name = "label12";
-            label12.Size = new Size(34, 20);
-            label12.TabIndex = 74;
-            label12.Text = "Bet:";
-            label12.Visible = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(747, 390);
-            label11.Name = "label11";
-            label11.Size = new Size(34, 20);
-            label11.TabIndex = 73;
-            label11.Text = "Bet:";
-            label11.Visible = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(636, 390);
-            label10.Name = "label10";
-            label10.Size = new Size(34, 20);
-            label10.TabIndex = 72;
-            label10.Text = "Bet:";
-            label10.Visible = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(544, 390);
-            label9.Name = "label9";
-            label9.Size = new Size(34, 20);
-            label9.TabIndex = 71;
-            label9.Text = "Bet:";
-            label9.Visible = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(444, 390);
-            label8.Name = "label8";
-            label8.Size = new Size(34, 20);
-            label8.TabIndex = 70;
-            label8.Text = "Bet:";
-            label8.Visible = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(355, 390);
-            label7.Name = "label7";
-            label7.Size = new Size(34, 20);
-            label7.TabIndex = 69;
-            label7.Text = "Bet:";
-            label7.Visible = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(243, 390);
-            label6.Name = "label6";
-            label6.Size = new Size(34, 20);
-            label6.TabIndex = 68;
-            label6.Text = "Bet:";
-            label6.Visible = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(146, 390);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 20);
-            label5.TabIndex = 67;
-            label5.Text = "Bet:";
-            label5.Visible = false;
-            // 
-            // pictureBox20
-            // 
-            pictureBox20.Location = new Point(869, 413);
-            pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new Size(41, 67);
-            pictureBox20.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox20.TabIndex = 66;
-            pictureBox20.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            pictureBox21.Location = new Point(822, 413);
-            pictureBox21.Name = "pictureBox21";
-            pictureBox21.Size = new Size(41, 67);
-            pictureBox21.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox21.TabIndex = 65;
-            pictureBox21.TabStop = false;
-            // 
-            // pictureBox22
-            // 
-            pictureBox22.Location = new Point(775, 413);
-            pictureBox22.Name = "pictureBox22";
-            pictureBox22.Size = new Size(41, 67);
-            pictureBox22.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox22.TabIndex = 64;
-            pictureBox22.TabStop = false;
-            // 
-            // pictureBox23
-            // 
-            pictureBox23.Location = new Point(728, 413);
-            pictureBox23.Name = "pictureBox23";
-            pictureBox23.Size = new Size(41, 67);
-            pictureBox23.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox23.TabIndex = 63;
-            pictureBox23.TabStop = false;
-            // 
-            // pictureBox24
-            // 
-            pictureBox24.Location = new Point(669, 413);
-            pictureBox24.Name = "pictureBox24";
-            pictureBox24.Size = new Size(41, 67);
-            pictureBox24.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox24.TabIndex = 62;
-            pictureBox24.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            pictureBox25.Location = new Point(622, 413);
-            pictureBox25.Name = "pictureBox25";
-            pictureBox25.Size = new Size(41, 67);
-            pictureBox25.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox25.TabIndex = 61;
-            pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            pictureBox26.Location = new Point(572, 413);
-            pictureBox26.Name = "pictureBox26";
-            pictureBox26.Size = new Size(41, 67);
-            pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox26.TabIndex = 60;
-            pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            pictureBox27.Location = new Point(525, 413);
-            pictureBox27.Name = "pictureBox27";
-            pictureBox27.Size = new Size(41, 67);
-            pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox27.TabIndex = 59;
-            pictureBox27.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            pictureBox19.Location = new Point(473, 413);
-            pictureBox19.Name = "pictureBox19";
-            pictureBox19.Size = new Size(41, 67);
-            pictureBox19.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox19.TabIndex = 58;
-            pictureBox19.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            pictureBox18.Location = new Point(426, 413);
-            pictureBox18.Name = "pictureBox18";
-            pictureBox18.Size = new Size(41, 67);
-            pictureBox18.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox18.TabIndex = 57;
-            pictureBox18.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            pictureBox17.Location = new Point(379, 413);
-            pictureBox17.Name = "pictureBox17";
-            pictureBox17.Size = new Size(41, 67);
-            pictureBox17.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox17.TabIndex = 56;
-            pictureBox17.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            pictureBox16.Location = new Point(332, 413);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(41, 67);
-            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox16.TabIndex = 55;
-            pictureBox16.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            pictureBox14.Location = new Point(273, 413);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(41, 67);
-            pictureBox14.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox14.TabIndex = 54;
-            pictureBox14.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Location = new Point(226, 413);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(41, 67);
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.TabIndex = 53;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Location = new Point(176, 413);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(41, 67);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 52;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Location = new Point(129, 413);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(41, 67);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 51;
-            pictureBox3.TabStop = false;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -818,6 +506,42 @@
             enterBetTextbox.Size = new Size(125, 27);
             enterBetTextbox.TabIndex = 77;
             enterBetTextbox.TextChanged += enterBetTextbox_TextChanged_1;
+            // 
+            // dealerCard7
+            // 
+            dealerCard7.Location = new Point(622, 44);
+            dealerCard7.Name = "dealerCard7";
+            dealerCard7.Size = new Size(41, 67);
+            dealerCard7.SizeMode = PictureBoxSizeMode.StretchImage;
+            dealerCard7.TabIndex = 76;
+            dealerCard7.TabStop = false;
+            // 
+            // playerCard5
+            // 
+            playerCard5.Location = new Point(475, 224);
+            playerCard5.Name = "playerCard5";
+            playerCard5.Size = new Size(41, 67);
+            playerCard5.SizeMode = PictureBoxSizeMode.StretchImage;
+            playerCard5.TabIndex = 77;
+            playerCard5.TabStop = false;
+            // 
+            // playerCard6
+            // 
+            playerCard6.Location = new Point(545, 224);
+            playerCard6.Name = "playerCard6";
+            playerCard6.Size = new Size(41, 67);
+            playerCard6.SizeMode = PictureBoxSizeMode.StretchImage;
+            playerCard6.TabIndex = 78;
+            playerCard6.TabStop = false;
+            // 
+            // playerCard7
+            // 
+            playerCard7.Location = new Point(622, 224);
+            playerCard7.Name = "playerCard7";
+            playerCard7.Size = new Size(41, 67);
+            playerCard7.SizeMode = PictureBoxSizeMode.StretchImage;
+            playerCard7.TabIndex = 79;
+            playerCard7.TabStop = false;
             // 
             // Form1
             // 
@@ -839,41 +563,28 @@
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)playerCard1).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerCard2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card5).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard5).EndInit();
             ((System.ComponentModel.ISupportInitialize)dealerCard6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)player2Card7).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerCard3).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerCard4).EndInit();
             newGameBox.ResumeLayout(false);
             newGameBox.PerformLayout();
             choiceGroupBox.ResumeLayout(false);
             choiceGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox21).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox22).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox23).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox24).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox25).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox26).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox27).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dealerCard7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCard7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -900,53 +611,30 @@
         private Button stayBtn;
         private Button splitBtn;
         private Button doubleDownBtn;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
+        private PictureBox player2Card7;
+        private PictureBox player2Card1;
+        private PictureBox player2Card2;
+        private PictureBox player2Card3;
+        private PictureBox player2Card4;
+        private PictureBox player2Card5;
         private PictureBox dealerCard2;
         private PictureBox dealerCard3;
         private PictureBox dealerCard4;
         private PictureBox dealerCard5;
         private PictureBox dealerCard6;
-        private PictureBox pictureBox15;
+        private PictureBox player2Card6;
         private PictureBox playerCard3;
         private PictureBox playerCard4;
         private Label betLabel;
         private Label hand1Bet1;
         private Label hand2Bet1;
-        private Label hand1Bet2;
-        private Label hand2Bet2;
         private GroupBox newGameBox;
-        private PictureBox pictureBox20;
-        private PictureBox pictureBox21;
-        private PictureBox pictureBox22;
-        private PictureBox pictureBox23;
-        private PictureBox pictureBox24;
-        private PictureBox pictureBox25;
-        private PictureBox pictureBox26;
-        private PictureBox pictureBox27;
-        private PictureBox pictureBox19;
-        private PictureBox pictureBox18;
-        private PictureBox pictureBox17;
-        private PictureBox pictureBox16;
-        private PictureBox pictureBox14;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox3;
         private GroupBox choiceGroupBox;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
         private Label label4;
         private TextBox enterBetTextbox;
+        private PictureBox playerCard7;
+        private PictureBox playerCard6;
+        private PictureBox playerCard5;
+        private PictureBox dealerCard7;
     }
 }

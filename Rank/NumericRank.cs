@@ -13,5 +13,12 @@ namespace Blackjack.Rank
             if(value > 10) throw new ArgumentOutOfRangeException("value");
             Value = value;
         }
+
+        public override bool IsSamePictureValue(BaseRank b)
+        {
+            NumericRank anotherNumeric = b as NumericRank;
+            if (anotherNumeric == null) return false;
+            return anotherNumeric.Value == this.Value;
+        }
     }
 }

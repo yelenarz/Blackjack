@@ -29,5 +29,12 @@ namespace Blackjack.Rank
                     throw new Exception(string.Format("unsupported EHero type = {0}", hero));
             }
         }
+
+        public override bool IsSamePictureValue(BaseRank b)
+        {
+            HeroRank anotherHero = b as HeroRank;
+            if (anotherHero == null) return false;
+            return this.Hero == anotherHero.Hero;
+        }
     }
 }

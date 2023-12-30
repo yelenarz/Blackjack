@@ -9,5 +9,7 @@ namespace Blackjack.Rank
     public abstract class BaseRank
     {
         public int Value { get; protected set; }
+
+        public abstract bool IsSamePictureValue(BaseRank b);
     }
 }
