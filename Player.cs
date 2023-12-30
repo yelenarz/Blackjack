@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    /* 
+    * This class is for player, which is keeping track of the cards he holds during the game,
+    * its count and the money he current owns.
+    */
     public class Player
     {
         public int Money { get; set; }
@@ -28,6 +32,11 @@ namespace Blackjack
             return Cards.Count == 2 && GetSumValue() == 21;
         }
 
+        /*
+        *  The following function calculates the total count of the player's cards 
+        *  in the game, and if the total, with an ace counted as 11, exceeds 21, 
+        *  adjust the ace count to 1.
+        */
         public int GetSumValue()
         {
             int sum = 0;
@@ -58,6 +67,10 @@ namespace Blackjack
             return sum;
         }
 
+        /*
+         * This is for the split, to remove the second card from first hand and add it
+         * to the second hand
+         */
         internal void RemoveCard(Card last)
         {
             Cards.Remove(last);

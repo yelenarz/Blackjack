@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    //Set a game with 6 decks of 52 cards, dealer and player initially having 300 euros 
     public class Game
     {
         public DeckSet DeckSet { get; private set; }
@@ -21,7 +22,7 @@ namespace Blackjack
         {
             DeckSet = new DeckSet(6);
             Player = new Player(300);
-            Player2 = new Player(0);
+            Player2 = new Player(0); //This is for the second hand
             Dealer = new Dealer();
         }
     }

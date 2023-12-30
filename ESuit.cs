@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    //Setting 4 suits
     public enum ESuit
     {
         SPADES = 1,

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    /* 
+    * This class is for dealer, which is keeping track of the cards he holds during the game,
+    * its count.
+    */
     public class Dealer
     { 
         public List<Card> Cards { get; private set; }
@@ -26,6 +30,11 @@ namespace Blackjack
             return Cards.Count == 2 && GetSumValue() == 21;
         }
 
+        /*
+         *  The following function calculates the total count of the dealer's cards 
+         *  in the game, and if the total, with an ace counted as 11, exceeds 21, 
+         *  adjust the ace count to 1.
+         */
         public int GetSumValue()
         {
             int sum = 0;

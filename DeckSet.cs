@@ -6,7 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Blackjack
-{ 
+{
+    /*
+     * This class is setting 6 decks of cards and function GetNextCard(Random random)
+     * selects a random card and returns it
+     */
     public class DeckSet
     {
         public List<Card> Cards { get; private set; }
@@ -33,6 +37,7 @@ namespace Blackjack
             }
         }
 
+        //Check if there are any cards in the decks
         public bool HasAnyCard()
         {   
             return Cards.Count > 0;

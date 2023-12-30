@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    /* 
+     * In this class we create a card with its suit(spades, diamonds, clubs, hearts) and
+     * rank(numeric:2-10 or hero: Jack, Queen, King, Ace) and assign it to a picture from 
+     * the resources.
+    */
     public class Card
     {
         public ESuit Suit { get; private set; }

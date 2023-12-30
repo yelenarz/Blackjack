@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
+    /* 
+     * In this class we check if the game is over, if player or dealer reached bust 
+     * or blackjack
+    */
     public class CheckResults
     {
         public bool blackJack = false, bustDealer = false, bustPlayer = false, draw=false;

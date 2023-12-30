@@ -17,7 +17,6 @@ namespace Blackjack
         private Game game;
 
         int bet;
-        int playerCardsCount, dealerCardsCount;
 
         PlayerDeckController dealerDeckController;
         PlayerDeckController playerDeckControllerMain;
