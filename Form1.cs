@@ -67,6 +67,11 @@ namespace Blackjack
                 splitBtn.Visible = false;
                 doubleDownBtn.Visible = false;
                 enterBetTextbox.Text = "0";
+                playerDeckControllerMain.count = 0;
+                playerDeckControllerAdditional.count = 0;
+                dealerDeckController.count = 0;
+                hand1Bet1.Visible = false;
+                hand2Bet1.Visible = false;
             }
         }
 
@@ -111,7 +116,7 @@ namespace Blackjack
             res.checkResults(game);
             if (res.draw)
             {
-                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw " + (bet).ToString(), MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw. You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     setNewGame();
@@ -139,7 +144,7 @@ namespace Blackjack
             else if (res.bustDealer)
             {
                 game.Player.Money += bet * 2;
-                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet * 2).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     setNewGame();
@@ -182,7 +187,6 @@ namespace Blackjack
             Random random = new Random();
 
             Card card1 = game.DeckSet.GetNextCard(random);
-            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
             game.Player.AddCard(card1);
 
             playerDeckControllerMain.ShowCard(card1);

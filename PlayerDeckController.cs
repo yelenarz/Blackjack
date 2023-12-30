@@ -16,7 +16,7 @@ namespace Blackjack
         PictureBox card6;
         PictureBox card7;
 
-        private int count;
+        public int count;
 
         public PlayerDeckController(PictureBox card1, PictureBox card2, PictureBox card3, PictureBox card4, PictureBox card5, PictureBox card6, PictureBox card7)
         {

@@ -570,7 +570,6 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Blackjack";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dealerCard1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
