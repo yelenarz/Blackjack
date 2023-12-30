@@ -46,9 +46,13 @@ namespace Blackjack
             newGameBox.Visible = false;
             bet = int.Parse(enterBetTextbox.Text);
 
-            if (bet < 2 || bet > 50)
+            if (game.Player.Money < 300 && (bet < 2 || bet > 100))
             {
-                label4.Text = "Bet needs to be >=2 or <=50";
+                label4.Text = "First bet needs to be >=2 or <=100";
+            }
+            else if (game.Player.Money == 300 && (bet < 2 || bet > 50))
+            {
+                label4.Text = "First bet needs to be >=2 or <=50";
             }
             else
             {

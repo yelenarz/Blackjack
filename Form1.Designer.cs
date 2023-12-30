@@ -441,9 +441,9 @@
             hand1Bet1.ForeColor = SystemColors.ButtonFace;
             hand1Bet1.Location = new Point(184, 183);
             hand1Bet1.Name = "hand1Bet1";
-            hand1Bet1.Size = new Size(45, 23);
+            hand1Bet1.Size = new Size(131, 23);
             hand1Bet1.TabIndex = 47;
-            hand1Bet1.Text = "Bet:";
+            hand1Bet1.Text = "Bet of hand 1:";
             hand1Bet1.Visible = false;
             // 
             // hand2Bet1
@@ -454,9 +454,9 @@
             hand2Bet1.ForeColor = SystemColors.ButtonFace;
             hand2Bet1.Location = new Point(184, 297);
             hand2Bet1.Name = "hand2Bet1";
-            hand2Bet1.Size = new Size(45, 23);
+            hand2Bet1.Size = new Size(131, 23);
             hand2Bet1.TabIndex = 48;
-            hand2Bet1.Text = "Bet:";
+            hand2Bet1.Text = "Bet of hand 2:";
             hand2Bet1.Visible = false;
             // 
             // newGameBox
