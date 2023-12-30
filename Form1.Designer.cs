@@ -66,6 +66,7 @@
             hand1Bet1 = new Label();
             hand2Bet1 = new Label();
             newGameBox = new GroupBox();
+            playerCountLabel2 = new Label();
             playerCard7 = new PictureBox();
             playerCard6 = new PictureBox();
             playerCard5 = new PictureBox();
@@ -73,7 +74,6 @@
             choiceGroupBox = new GroupBox();
             label4 = new Label();
             enterBetTextbox = new TextBox();
-            playerCountLabel2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dealerCard1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)playerCard1).BeginInit();
@@ -280,6 +280,7 @@
             doubleDownBtn.Text = "Double Down";
             doubleDownBtn.UseVisualStyleBackColor = true;
             doubleDownBtn.Visible = false;
+            doubleDownBtn.Click += doubleDownBtn_Click;
             // 
             // player2Card1
             // 
@@ -479,6 +480,16 @@
             newGameBox.TabStop = false;
             newGameBox.Visible = false;
             // 
+            // playerCountLabel2
+            // 
+            playerCountLabel2.AutoSize = true;
+            playerCountLabel2.Location = new Point(37, 346);
+            playerCountLabel2.Name = "playerCountLabel2";
+            playerCountLabel2.Size = new Size(70, 20);
+            playerCountLabel2.TabIndex = 80;
+            playerCountLabel2.Text = "Count =0";
+            playerCountLabel2.Visible = false;
+            // 
             // playerCard7
             // 
             playerCard7.Location = new Point(622, 224);
@@ -544,16 +555,6 @@
             enterBetTextbox.Size = new Size(125, 27);
             enterBetTextbox.TabIndex = 77;
             enterBetTextbox.TextChanged += enterBetTextbox_TextChanged_1;
-            // 
-            // playerCountLabel2
-            // 
-            playerCountLabel2.AutoSize = true;
-            playerCountLabel2.Location = new Point(37, 346);
-            playerCountLabel2.Name = "playerCountLabel2";
-            playerCountLabel2.Size = new Size(70, 20);
-            playerCountLabel2.TabIndex = 80;
-            playerCountLabel2.Text = "Count =0";
-            playerCountLabel2.Visible = false;
             // 
             // Form1
             // 

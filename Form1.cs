@@ -75,10 +75,12 @@ namespace Blackjack
             Random random = new Random();
 
             //Card card1 = game.DeckSet.GetNextCard(random);
-            Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
+            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
+            Card card1 = new Card(ESuit.CLUBS, new NumericRank(2));
             game.Player.AddCard(card1);
             //Card card2 = game.DeckSet.GetNextCard(random);
-            Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Ace));
+            //Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Ace));
+            Card card2 = new Card(ESuit.CLUBS, new NumericRank(7));
             game.Player.AddCard(card2);
 
             playerDeckControllerMain.ShowCard(card1);
@@ -90,6 +92,11 @@ namespace Blackjack
             if (card1.Rank.IsSamePictureValue(card2.Rank))//checks only values 10 and king true
             {
                 splitBtn.Visible = true;
+            }
+            int playerSum = game.Player.GetSumValue();
+            if (playerSum >= 9 && playerSum <= 11)
+            {
+                doubleDownBtn.Visible = true;
             }
 
             Card dCard = game.DeckSet.GetNextCard(random);
@@ -108,6 +115,20 @@ namespace Blackjack
             if (res.draw)
             {
                 DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw " + (bet).ToString(), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    setNewGame();
+                }
+                else
+                {
+                    this.Close();
+                }
+                return true;
+            }
+            else if (res.blackJack)
+            {
+                game.Player.Money += (int)(bet * 2.5);
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     setNewGame();
@@ -205,6 +226,11 @@ namespace Blackjack
 
         private void stayBtn_Click(object sender, EventArgs e)
         {
+            this.dealerPlay();
+        }
+
+        private void dealerPlay()
+        {
             bool isGameOverVar = false;
             while (!isGameOverVar)
             {
@@ -214,6 +240,25 @@ namespace Blackjack
                 dealerDeckController.ShowCard(dCard);
                 dealerCountLabel.Text = "Dealer's count: " + game.Dealer.GetSumValue().ToString();
                 isGameOverVar = isGameOver();
+            }
+        }
+
+        private void doubleDownBtn_Click(object sender, EventArgs e)
+        {
+            doubleDownBtn.Visible = false;
+
+            game.Player.Money -= bet;
+            bet *= 2;
+            walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
+
+            Random random = new Random();
+            Card dCard = game.DeckSet.GetNextCard(random);
+            game.Player.AddCard(dCard);
+            playerDeckControllerMain.ShowCard(dCard);
+            bool res = isGameOver();
+            if (!res)
+            {
+                this.dealerPlay();
             }
 
         }

@@ -21,6 +21,11 @@ namespace Blackjack
             Cards.Add(card);
         }
 
+        public bool IsBlackJack()
+        {
+            return Cards.Count == 2 && GetSumValue() == 21;
+        }
+
         public int GetSumValue()
         {
             int sum = 0;
