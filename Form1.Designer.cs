@@ -211,7 +211,7 @@
             // 
             // playerCard1
             // 
-            playerCard1.Location = new Point(202, 224);
+            playerCard1.Location = new Point(249, 224);
             playerCard1.Name = "playerCard1";
             playerCard1.Size = new Size(41, 67);
             playerCard1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -268,7 +268,7 @@
             // 
             // playerCard2
             // 
-            playerCard2.Location = new Point(402, 218);
+            playerCard2.Location = new Point(402, 224);
             playerCard2.Name = "playerCard2";
             playerCard2.Size = new Size(41, 67);
             playerCard2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -435,7 +435,7 @@
             // 
             // playerCard3
             // 
-            playerCard3.Location = new Point(597, 218);
+            playerCard3.Location = new Point(564, 224);
             playerCard3.Name = "playerCard3";
             playerCard3.Size = new Size(41, 67);
             playerCard3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -444,7 +444,7 @@
             // 
             // playerCard4
             // 
-            playerCard4.Location = new Point(796, 218);
+            playerCard4.Location = new Point(762, 218);
             playerCard4.Name = "playerCard4";
             playerCard4.Size = new Size(41, 67);
             playerCard4.SizeMode = PictureBoxSizeMode.StretchImage;

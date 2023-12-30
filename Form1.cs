@@ -20,6 +20,7 @@ namespace Blackjack
         public Form1()
         {
             game = new Game();
+            results = new CheckResults();
             InitializeComponent();
         }
 
@@ -37,13 +38,16 @@ namespace Blackjack
             }
             else
             {
-                game.Dealer.Cards.Clear();
+                game.Dealer.Cards.Clear();//does not remove cards
                 game.Player.Cards.Clear();
                 dealerCardsCount = 1;
+                dealerCard2.Image = null;
                 dealerCard3.Image = null;
                 dealerCard4.Image = null;
                 dealerCard5.Image = null;
                 dealerCard6.Image = null;
+                playerCard3.Image = null;
+                playerCard4.Image = null;
                 newGameBox.Visible = true;
                 label4.Visible = false;
                 enterBetTextbox.Visible = false;
@@ -86,17 +90,45 @@ namespace Blackjack
         public void gameOver()
         {
             results.checkResults(game);
-            if ()
-                bet *= 2;
-            game.Player.Money += bet;
-            DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (results.draw)
             {
-                setNewGame();
+                game.Player.Money -= bet;
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "It is a draw " + (bet).ToString(), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    setNewGame();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
-            else
+            else if (results.bustDealer)
             {
-                this.Close();
+                bet *= 2;
+                game.Player.Money += bet;
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "Congratulations! You won " + (bet).ToString(), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    setNewGame();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            else if (results.bustPlayer)
+            {
+                game.Player.Money -= bet;
+                DialogResult result = MessageBox.Show("\nWould you like to play again? ", "You lost " + (bet).ToString(), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    setNewGame();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
         }
 
@@ -146,27 +178,27 @@ namespace Blackjack
                 case 1:
                     dealerCard2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
                     dealerCardsCount++;
-                    checkResult();
+                    gameOver();
                     break;
                 case 2:
                     dealerCard3.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
                     dealerCardsCount++;
-                    checkResult();
+                    gameOver();
                     break;
                 case 3:
                     dealerCard4.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
                     dealerCardsCount++;
-                    checkResult();
+                    gameOver();
                     break;
                 case 4:
                     dealerCard5.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
                     dealerCardsCount++;
-                    checkResult();
+                    gameOver();
                     break;
                 case 5:
                     dealerCard6.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dCard.GetNameOfView());
                     dealerCardsCount++;
-                    checkResult();
+                    gameOver();
                     break;
                 default:
                     break;
