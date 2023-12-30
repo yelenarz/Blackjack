@@ -74,13 +74,10 @@ namespace Blackjack
         {
             Random random = new Random();
 
-            //Card card1 = game.DeckSet.GetNextCard(random);
-            //Card card1 = new Card(ESuit.CLUBS, new HeroRank(EHero.Jack));
-            Card card1 = new Card(ESuit.CLUBS, new NumericRank(2));
+            Card card1 = game.DeckSet.GetNextCard(random);
             game.Player.AddCard(card1);
-            //Card card2 = game.DeckSet.GetNextCard(random);
-            //Card card2 = new Card(ESuit.HEARTS, new HeroRank(EHero.Ace));
-            Card card2 = new Card(ESuit.CLUBS, new NumericRank(7));
+
+            Card card2 = game.DeckSet.GetNextCard(random);
             game.Player.AddCard(card2);
 
             playerDeckControllerMain.ShowCard(card1);
@@ -260,7 +257,6 @@ namespace Blackjack
             {
                 this.dealerPlay();
             }
-
         }
     }
 }
