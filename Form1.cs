@@ -305,6 +305,7 @@ namespace Blackjack
 
             game.Player.Money -= bet;
             bet *= 2;
+            betLabel.Text = "Your bet: " + bet.ToString();
             walletLabel.Text = "Your wallet: " + game.Player.Money.ToString();
 
             //Give only one random card for a player
